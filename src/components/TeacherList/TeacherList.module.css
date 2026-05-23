@@ -1,0 +1,34 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.empty {
+  text-align: center;
+  padding-block: 64px;
+  font-size: 18px;
+  color: var(--color-text-muted);
+}
+
+.loadMoreWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+
+.loadMore {
+  padding: 16px 48px;
+  background: var(--color-primary);
+  border-radius: var(--radius-btn);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-text);
+  transition: background-color 0.15s ease;
+}
+
+.loadMore:hover,
+.loadMore:focus-visible {
+  background: var(--color-primary-hover);
+  outline: none;
+}

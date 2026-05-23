@@ -1,0 +1,10 @@
+.page {
+  padding-block: 32px 96px;
+}
+
+.status {
+  text-align: center;
+  padding-block: 64px;
+  font-size: 18px;
+  color: var(--color-text-muted);
+}

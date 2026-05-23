@@ -1,0 +1,144 @@
+.header {
+  width: 100%;
+  background: var(--color-bg);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 20px;
+  gap: 32px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.logoFlag {
+  width: 28px;
+  height: 28px;
+  flex: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navLink {
+  font-size: 16px;
+  color: var(--color-text);
+  padding-block: 4px;
+  position: relative;
+  font-weight: 400;
+}
+
+.navLinkActive {
+  font-weight: 700;
+}
+
+.navLinkActive::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.loginBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.loginBtn:hover {
+  color: var(--color-primary-hover);
+}
+
+.loginIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+}
+
+.registerBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 39px;
+  background: var(--color-text);
+  color: #fff;
+  border-radius: var(--radius-btn);
+  font-weight: 700;
+  font-size: 16px;
+  transition: opacity 0.15s ease;
+}
+
+.registerBtn:hover,
+.registerBtn:focus-visible {
+  opacity: 0.85;
+}
+
+.userName {
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.logoutBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.logoutBtn:hover {
+  color: var(--color-primary-hover);
+}
+
+@media (max-width: 1023px) {
+  .inner {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,138 @@
+.page {
+  padding-block: 24px 64px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 568px);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.heroLeft {
+  background: var(--color-bg);
+  border-radius: 30px;
+  padding: 98px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  max-width: 600px;
+}
+
+.titleHighlight {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--color-primary-soft);
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.subtitle {
+  margin-top: 32px;
+  max-width: 470px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.cta {
+  margin-top: 56px;
+  align-self: flex-start;
+  padding: 16px 88px;
+  background: var(--color-primary);
+  border-radius: var(--radius-btn);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-text);
+  transition: background-color 0.15s ease;
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background: var(--color-primary-hover);
+  outline: none;
+}
+
+.heroRight {
+  background: var(--color-primary-soft);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 32px;
+}
+
+.heroImage {
+  max-width: 100%;
+  max-height: 460px;
+  object-fit: contain;
+}
+
+.stats {
+  margin-top: 24px;
+  border: 1.5px dashed var(--color-primary);
+  border-radius: 30px;
+  padding: 40px 64px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  line-height: 1.14;
+}
+
+.statLabel {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  color: var(--color-text-soft);
+  max-width: 96px;
+}
+
+@media (max-width: 1023px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .heroLeft {
+    padding: 48px 32px;
+  }
+  .title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroLeft {
+    padding: 32px 24px;
+  }
+  .title {
+    font-size: 30px;
+  }
+  .stats {
+    padding: 24px;
+  }
+}

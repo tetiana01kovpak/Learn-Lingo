@@ -1,0 +1,284 @@
+.card {
+  display: flex;
+  gap: 48px;
+  padding: 24px;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.avatarWrap {
+  flex: none;
+  width: 120px;
+  height: 120px;
+  background: var(--color-surface);
+  border: 3px solid var(--color-primary-soft);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-bg);
+}
+
+.onlineDot {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.onlineDot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--color-online);
+  border-radius: 50%;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 0;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.languagesLabel {
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.metaItem + .metaItem {
+  padding-left: 16px;
+  border-left: 1px solid var(--color-border);
+}
+
+.metaIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.star {
+  color: var(--color-star);
+}
+
+.priceValue {
+  color: var(--color-price);
+}
+
+.heartBtn {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  color: var(--color-text);
+  transition: color 0.15s ease;
+  margin-left: 8px;
+}
+
+.heartBtn:hover {
+  color: var(--color-primary);
+}
+
+.heartActive {
+  color: var(--color-primary);
+}
+
+.heartIcon {
+  width: 26px;
+  height: 26px;
+}
+
+.facts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fact {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.factLabel {
+  color: var(--color-text-muted);
+}
+
+.factValue {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.factText {
+  color: var(--color-text);
+}
+
+.readMore {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: underline;
+  padding-block: 4px;
+  align-self: flex-start;
+}
+
+.experience {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reviewHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-bg);
+  flex: none;
+}
+
+.reviewMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reviewerName {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.reviewRating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.reviewComment {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.levels {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.levelChip {
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-chip);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-text);
+  background: transparent;
+}
+
+.levelChipActive {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.bookBtn {
+  align-self: flex-start;
+  padding: 16px 48px;
+  background: var(--color-primary);
+  border-radius: var(--radius-btn);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-text);
+  transition: background-color 0.15s ease;
+}
+
+.bookBtn:hover,
+.bookBtn:focus-visible {
+  background: var(--color-primary-hover);
+  outline: none;
+}
+
+@media (max-width: 900px) {
+  .card {
+    gap: 24px;
+    flex-direction: column;
+  }
+  .meta {
+    width: 100%;
+  }
+}
