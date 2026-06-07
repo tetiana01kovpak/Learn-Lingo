@@ -1,0 +1,17 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.home {
+  background: #ffffff;
+}
+
+.default {
+  background: var(--color-bg);
+}
+
+.main {
+  flex: 1;
+}

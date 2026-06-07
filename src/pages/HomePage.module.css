@@ -41,14 +41,15 @@
 
 .subtitle {
   margin-top: 32px;
-  max-width: 470px;
+  max-width: 471px;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.375;
+  letter-spacing: -0.02em;
   color: var(--color-text);
 }
 
 .cta {
-  margin-top: 56px;
+  margin-top: 64px;
   align-self: flex-start;
   padding: 16px 88px;
   background: var(--color-primary);
@@ -87,8 +88,9 @@
   border-radius: 30px;
   padding: 40px 64px;
   display: flex;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
   flex-wrap: wrap;
 }
 
@@ -96,9 +98,6 @@
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  flex: 1;
-  min-width: 180px;
-  justify-content: center;
 }
 
 .statValue {
