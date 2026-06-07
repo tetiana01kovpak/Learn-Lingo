@@ -10,7 +10,7 @@ const stats = [
 ];
 
 export const HomePage = () => (
-  <div className={`container ${styles.page}`}>
+  <div className={styles.page}>
     <section className={styles.hero}>
       <div className={styles.heroLeft}>
         <h1 className={styles.title}>
