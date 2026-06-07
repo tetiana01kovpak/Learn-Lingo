@@ -68,6 +68,8 @@
   font-weight: 700;
   font-size: 16px;
   color: var(--color-text);
+  white-space: nowrap;
+  flex: none;
 }
 
 .loginBtn:hover {
@@ -90,6 +92,8 @@
   border-radius: var(--radius-btn);
   font-weight: 700;
   font-size: 16px;
+  white-space: nowrap;
+  flex: none;
   transition: opacity 0.15s ease;
 }
 
@@ -104,6 +108,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
+  flex: none;
 }
 
 .userAvatar {
@@ -125,6 +131,8 @@
   font-weight: 700;
   font-size: 16px;
   color: var(--color-text);
+  white-space: nowrap;
+  flex: none;
 }
 
 .logoutBtn:hover {
