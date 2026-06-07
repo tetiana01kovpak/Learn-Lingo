@@ -60,7 +60,7 @@ export const Modal = ({ open, onClose, children, ariaLabel = 'Dialog', wide = fa
             <path
               d="M6 6L18 18M6 18L18 6"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
               strokeLinecap="round"
             />
           </svg>

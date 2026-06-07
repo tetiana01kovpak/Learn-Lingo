@@ -3,14 +3,16 @@
   --color-surface: #ffffff;
   --color-text: #121417;
   --color-text-muted: #8a8a89;
-  --color-text-soft: rgba(18, 20, 23, 0.7);
+  --color-text-soft: rgba(18, 20, 23, 0.8);
   --color-primary: #f4c550;
   --color-primary-hover: #e9b22f;
+  --color-btn-hover: #ffdc86;
   --color-primary-soft: #fbe9ba;
   --color-star: #ffc531;
   --color-online: #38cd3e;
   --color-price: #38cd3e;
   --color-border: rgba(18, 20, 23, 0.2);
+  --color-border-input: rgba(18, 20, 23, 0.1);
   --color-overlay: rgba(18, 20, 23, 0.5);
   --color-error: #d04545;
 

@@ -52,7 +52,7 @@
   left: 0;
   right: 0;
   background: var(--color-surface);
-  border-radius: var(--radius-input);
+  border-radius: 12px;
   padding: 14px 18px;
   display: flex;
   flex-direction: column;
@@ -65,9 +65,9 @@
 
 .option {
   text-align: left;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
-  color: rgba(18, 20, 23, 0.4);
+  color: rgba(18, 20, 23, 0.2);
   padding: 4px 0;
   transition: color 0.12s ease;
 }

@@ -93,7 +93,7 @@ export const LoginModal = ({ open, onClose }: Props) => {
             onClick={() => setShowPassword((p) => !p)}
             aria-label={showPassword ? 'Hide password' : 'Show password'}
           >
-            {showPassword ? <EyeIcon width={22} height={22} /> : <EyeOffIcon width={22} height={22} />}
+            {showPassword ? <EyeIcon width={20} height={20} /> : <EyeOffIcon width={20} height={20} />}
           </button>
           {errors.password && <span className={formStyles.error}>{errors.password.message}</span>}
         </div>

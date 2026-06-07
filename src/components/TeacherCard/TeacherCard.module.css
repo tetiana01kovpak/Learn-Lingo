@@ -30,8 +30,8 @@
 
 .onlineDot {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 19px;
+  right: 23px;
   width: 12px;
   height: 12px;
   background: #fff;
@@ -156,9 +156,7 @@
 }
 
 .factValue {
-  color: var(--color-text);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
+  color: var(--color-text-muted);
 }
 
 .factText {
@@ -184,7 +182,7 @@
 .reviews {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
 .review {
@@ -269,7 +267,7 @@
 
 .bookBtn:hover,
 .bookBtn:focus-visible {
-  background: var(--color-primary-hover);
+  background: var(--color-btn-hover);
   outline: none;
 }
 

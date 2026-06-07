@@ -57,7 +57,7 @@
 
 .cta:hover,
 .cta:focus-visible {
-  background: var(--color-primary-hover);
+  background: var(--color-btn-hover);
   outline: none;
 }
 
