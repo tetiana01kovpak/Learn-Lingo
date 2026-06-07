@@ -1,79 +1,29 @@
-import { useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useCallback } from 'react';
 import { Filters } from '@/components/Filters/Filters';
 import { TeacherList } from '@/components/TeacherList/TeacherList';
-import { fetchTeachers } from '@/services/teachersApi';
-import type { Teacher, TeacherFilters } from '@/types/teacher';
+import { useTeacherCatalog } from '@/hooks/useTeacherCatalog';
 import { useAppSelector } from '@/store/store';
+import type { Teacher } from '@/types/teacher';
 import styles from './TeachersPage.module.css';
 
-const PAGE_SIZE = 4;
-
-const matches = (teacher: Teacher, filters: TeacherFilters) => {
-  if (filters.language && !teacher.languages.includes(filters.language)) return false;
-  if (filters.level && !teacher.levels.includes(filters.level)) return false;
-  if (filters.price && teacher.price_per_hour !== Number(filters.price)) return false;
-  return true;
-};
-
 export const FavoritesPage = () => {
-  const [teachers, setTeachers] = useState<Teacher[]>([]);
-  const [status, setStatus] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle');
-  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
-  const [searchParams, setSearchParams] = useSearchParams();
   const favoriteIds = useAppSelector((s) => s.favorites.ids);
 
-  const filters: TeacherFilters = {
-    language: searchParams.get('language') ?? '',
-    level: searchParams.get('level') ?? '',
-    price: searchParams.get('price') ?? '',
-  };
-
-  useEffect(() => {
-    let cancelled = false;
-    setStatus('loading');
-    fetchTeachers()
-      .then((data) => {
-        if (cancelled) return;
-        setTeachers(data);
-        setStatus('ready');
-      })
-      .catch(() => {
-        if (cancelled) return;
-        setStatus('error');
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const favorites = useMemo(
-    () => teachers.filter((t) => favoriteIds.includes(t.id)),
-    [teachers, favoriteIds],
+  const selectFavorites = useCallback(
+    (teachers: Teacher[]) => teachers.filter((t) => favoriteIds.includes(t.id)),
+    [favoriteIds],
   );
 
-  const availableLanguages = useMemo(() => {
-    const set = new Set<string>();
-    favorites.forEach((t) => t.languages.forEach((l) => set.add(l)));
-    return Array.from(set).sort();
-  }, [favorites]);
-
-  const filtered = useMemo(
-    () => favorites.filter((t) => matches(t, filters)),
-    [favorites, filters],
-  );
-
-  useEffect(() => {
-    setVisibleCount(PAGE_SIZE);
-  }, [filters.language, filters.level, filters.price]);
-
-  const handleFiltersChange = (next: TeacherFilters) => {
-    const params: Record<string, string> = {};
-    if (next.language) params.language = next.language;
-    if (next.level) params.level = next.level;
-    if (next.price) params.price = next.price;
-    setSearchParams(params, { replace: true });
-  };
+  const {
+    status,
+    base,
+    filters,
+    availableLanguages,
+    filtered,
+    visibleCount,
+    loadMore,
+    handleFiltersChange,
+  } = useTeacherCatalog(selectFavorites);
 
   return (
     <div className={`container ${styles.page}`}>
@@ -95,9 +45,9 @@ export const FavoritesPage = () => {
           teachers={filtered}
           highlightedLevel={filters.level || undefined}
           visibleCount={visibleCount}
-          onLoadMore={() => setVisibleCount((v) => v + PAGE_SIZE)}
+          onLoadMore={loadMore}
           emptyMessage={
-            favorites.length === 0
+            base.length === 0
               ? "You haven't added any teachers to your favorites yet."
               : 'No favorite teachers match the current filters.'
           }
