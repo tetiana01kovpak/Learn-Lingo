@@ -156,7 +156,10 @@
 }
 
 .factValue {
-  color: var(--color-text-muted);
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
 }
 
 .factText {
